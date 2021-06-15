@@ -11,15 +11,19 @@ const seedAll = async () => {
   await seedCategories();
   console.log('\n----- CATEGORIES SEEDED -----\n');
 
+  try {
   await seedProducts();
   console.log('\n----- PRODUCTS SEEDED -----\n');
-
+    
   await seedTags();
   console.log('\n----- TAGS SEEDED -----\n');
-
+  
   await seedProductTags();
   console.log('\n----- PRODUCT TAGS SEEDED -----\n');
-
+  
+  } catch (err) {
+    console.log(err)
+}
   process.exit(0);
 };
 
